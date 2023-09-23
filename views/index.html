@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+  <meta charset="UTF-8"/>    
+  <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+ 
+<body>
+  <h1>这是一级标题</h1>
+  <h2>这是二级标题<h2>
+  <h3>这是三级标题<h3>
+  <h4>这是四级标题<h4>
+  <h5>这是五级标题<h5>
+  <h6>这是六级标题<h6>
+    
+  <p>定义文本</p>
+   
+  <p>随便字符<br/>《-换行符</p>
+
+  <script>
+    // 发送GET请求
+    axios.get('https://bff.gds.org.cn/gds/searching-api/ProductService/ProductInfoByGTIN', {
+      params: {
+        gtin: '06922868221219',
+        id: 'UfDJ8CsTLrJ-r9NNoHBsMNwTT85PZpnLclFp7A2i9W6_gtCDWtLADJbNrqhrehHq_Ob_6pdqV3U3pWDzxo9c0JNWaybrd-8ruz6d_YiiFawfnbC1-LH0k19hU78NOcjnzpdOWG4lphOOFm_nmn3ANTyrgxawYcDwslywu7WmwVARSG8MfeUFNyHAzD3RaHXGkAfnY8ebEwgn1NNA6vIhEV6IcNC'
+      },
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+        Connection: "keep-alive",
+        Host: "bff.gds.org.cn",
+        Origin: "https://www.gds.org.cn",
+        Referer: "https://www.gds.org.cn/",
+        "Sec-Ch-Ua":
+          '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Sec-Ch-Ua-Platform": '"Windows"',
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-site",
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+        'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkNFOTk2QzBDQzg1MzQ4MkEzMzQxNkVBOUUxQ0E3NkVERjYzMUJCODNSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InpwbHNETWhUU0NvelFXNnA0Y3AyN2ZZeHU0TSJ9.eyJuYmYiOjE2ODY0MjQ5NTAsImV4cCI6MTY4NjQzMjE1MCwiaXNzIjoiaHR0cHM6Ly9wYXNzcG9ydC5nZHMub3JnLmNuIiwiY2xpZW50X2lkIjoidnVlanNfY29kZV9jbGllbnQiLCJzdWIiOiIyMDc4ODczIiwiYXV0aF90aW1lIjoxNjg2NDI0OTQyLCJpZHAiOiJsb2NhbCIsInJvbGUiOiJNaW5lIiwiVXNlckluZm8iOiJ7XCJVc2VyTmFtZVwiOm51bGwsXCJCcmFuZE93bmVySWRcIjowLFwiQnJhbmRPd25lck5hbWVcIjpudWxsLFwiR2NwQ29kZVwiOm51bGwsXCJVc2VyQ2FyZE5vXCI6XCLmmoLml6Dkv6Hmga9cIixcIklzUGFpZFwiOmZhbHNlLFwiQ29tcGFueU5hbWVFTlwiOm51bGwsXCJDb21wYW55QWRkcmVzc0NOXCI6bnVsbCxcIkNvbnRhY3RcIjpudWxsLFwiQ29udGFjdFRlbE5vXCI6bnVsbCxcIkdjcExpY2Vuc2VIb2xkZXJUeXBlXCI6bnVsbCxcIkxlZ2FsUmVwcmVzZW50YXRpdmVcIjpudWxsLFwiVW5pZmllZFNvY2lhbENyZWRpdENvZGVcIjpudWxsfSIsIlY0VXNlckluZm8iOiJ7XCJVc2VyTmFtZVwiOlwi5ZWG5rW35rWu5rKJNjY2XCIsXCJFbWFpbFwiOm51bGwsXCJQaG9uZVwiOlwiMTkxNTAwMjQ0MjNcIixcIkNhcmROb1wiOlwiXCJ9IiwianRpIjoiRjUwOTVDOTgwMjk4OUI0Rjk2QjJDODMwRTcxMDVEMDgiLCJpYXQiOjE2ODY0MjQ5NTAsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJhcGkxIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.fprKPFUy8-fm2hAS1zxrAYedkSk2Jb-gKTagxBrCgcmxMCDbUSKNN_BSj8a4GzBpQ5kP100lO1SNi86hGiBzaPTTPdolmRgEtRFAsTDYCD2Mn5dZST9aV431SrbeDRlW1A4f3IMRsabIBYEu-YN-V4C-tula4qVxVOFsn5naU00-j8qHPPk34hNuq0zkd1o-a-CS5HG53tXObIbbhqnVMAaZqPU-Sk4pfObi4c6zh4rLaDel-3BnDz-nsc-iBr2sXYqezYPtzcvGliKQ8o_EgKLwCnVh2Gy_h90Wt8_gwtImxNN2jMo_M3CFxw7XrQ5bjE0prJU1QDcZ3hl6e76tKQ'
+      }
+    })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+
+</body>
+</html>
